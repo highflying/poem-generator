@@ -25,15 +25,15 @@ def load(file):
 	ins = open(file,"r")
 	line = random.choice(ins.readlines())
 	ins.close()
-	return line
+	return line.replace("\n", " ").replace("\r", "").replace(" ", "").replace("_", "-")
 def noun():
-	return load("nouns").replace("\n", " ").replace("\r", "").replace(" ", "")
+	return load("nouns")
 def verb():
-	return load("verbs").replace("\n", " ").replace("\r", "").replace(" ", "")
+	return load("verbs")
 def adjective():
-	return load("adjectives").replace("\n", " ").replace("\r", "").replace(" ", "")
+	return load("adjectives")
 def adverb():
-	return load("adverbs").replace("\n", " ").replace("\r", "").replace(" ", "")
+	return load("adverbs")
 def gen_sentence():
 	part1 = noun().capitalize() + " " + verb()
 	part2 = noun() + " are " + adjective()
